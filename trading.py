@@ -56,7 +56,7 @@ def ana(path,list_of_strategies,money_per_strategy,money_per_stock):
     optimal_holdings_df['Merged_Price'] = optimal_holdings_df.apply(lambda row:row["Merged_Amount"]*row["Price"], axis=1)
     optimal_holdings_df = optimal_holdings_df.drop_duplicates(subset=['Ticker'])
     optimal_holdings_df = optimal_holdings_df[["Ticker","Merged_Amount"]]
-    optimal_holdings_df.to_csv(path+"optimal.csv", sep=',', encoding='utf-8',index=False)   
+    optimal_holdings_df.to_csv(path+"optimal.csv", sep=',', encoding='utf-8',index=False)
         
     current_holdings_df = pd.read_csv(path+"current_holdings.csv", index_col=None, header=0)
     
